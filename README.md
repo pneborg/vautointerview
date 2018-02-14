@@ -2,7 +2,7 @@
 .Net Core 2.0 C# Console Application.  
 Compile and then navigate to \bin\Release\netcoreapp2.0  
 This program utilizes asycnchronous threading to make parallel api calls to http://vautointerview.azurewebsites.net.  
-The first batch of threads retrieves each vehicle's detail on its asynchronous thread.  
+The first batch of threads retrieves each vehicle's detail on a distinct asynchronous worker thread.  
 The second batch of threads retrieves each dealer's detail using a distinct list of dealer ids obtained from the list of vehicles returned on a thread per dealer.
 # Usage:
       dotnet vautointerview.dll
@@ -10,12 +10,12 @@ The second batch of threads retrieves each dealer's detail using a distinct list
       dotnet vautointerview.dll true   
 ##### Output Example 1 without verbose messages  
 
-Starting 6:55:39 AM
-Congratulations. Answer result Success=True Total Milliseconds=8852
+   Starting 6:55:39 AM
+   Congratulations. Answer result Success=True Total Milliseconds=8852
 
-Completed 6:55:48 AM  
+   Completed 6:55:48 AM  
   
-Press Any Key to Continue...     
+   Press Any Key to Continue...     
 
 ##### Output Example 2 with verbose messages enabled  
 Starting 6:56:35 AM  
